@@ -3,6 +3,7 @@ package rachmanforniandi.com.anotherkotlinv2app
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import android.support.v7.app.AlertDialog
 import android.util.Log
 import android.view.Menu
 import android.view.MenuItem
@@ -70,7 +71,12 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showsInfo(){
-
+        val dialogTitle = getString(R.string.about_title,BuildConfig.VERSION_NAME)
+        val dialogMessage = getString(R.string.about_message)
+        val builder = AlertDialog.Builder(this)
+        builder.setTitle(dialogTitle)
+        builder.setMessage(dialogMessage)
+        builder.create().show()
     }
 
     private fun restoreGame() {
