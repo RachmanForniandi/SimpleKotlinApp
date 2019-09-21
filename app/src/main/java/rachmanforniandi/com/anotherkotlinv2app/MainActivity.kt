@@ -4,6 +4,8 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
 import android.util.Log
+import android.view.Menu
+import android.view.MenuItem
 import android.view.View
 import android.view.animation.AnimationUtils
 import android.widget.Button
@@ -52,6 +54,23 @@ class MainActivity : AppCompatActivity() {
             view.startAnimation(bounceAnimation)
             incrementScore()
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        super.onCreateOptionsMenu(menu)
+        menuInflater.inflate(R.menu.menu,menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == R.id.action_about){
+            showsInfo()
+        }
+        return true
+    }
+
+    private fun showsInfo(){
+
     }
 
     private fun restoreGame() {
